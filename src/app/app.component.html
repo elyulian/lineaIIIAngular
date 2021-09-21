@@ -1,5 +1,24 @@
-Bienvenido pagina inicial {{title}}
-<input type="text"  [(ngModel)]="title"/>
-<input type="button" value = "Haga click pa"/>
+CALCULADORA BASICA 2021 <br> 
+{{title}}<br>
+<input type="number"  [(ngModel)]="numero1" /> {{numero1}} <br>
+<input type="number"  [(ngModel)]="numero2"  />{{numero2}<br>
+
+<input type="button" value = "Sumar" (click)="operar('s')"/>
+<input type="button" value = "Restar" (click)="operar('r')"/>
+<input type="button" value = "Multiplicar" (click)="operar('m')"/>
+<input type="button" value = "Dividir" (click)="operar('d')"/><br>
+
+<br>
+<br>
+<br>
+
+{{resultado}}
+
+<input type="text" (keyup)="$event"/><br>
+<br>
+<br>
+<br>
+-----componente login -------
+
 <app-login></app-login>
 }
