@@ -9,7 +9,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatTableModule} from '@angular/material/table';
 
@@ -30,9 +30,10 @@ import {MatTableModule} from '@angular/material/table';
     NoopAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule,
+    BrowserAnimationsModule,
     MatProgressBarModule,
     MatTableModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
