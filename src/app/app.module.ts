@@ -7,11 +7,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatTableModule} from '@angular/material/table';
+import {MaterialModule} from './material/material.module';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BuscarComponent } from './pages/buscar/buscar.component';
+import { EditarComponent } from './pages/editar/editar.component';
+import { IngresarComponent } from './pages/ingresar/ingresar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -21,18 +22,19 @@ import {MatTableModule} from '@angular/material/table';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    BuscarComponent,
+    EditarComponent,
+    IngresarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NoopAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
+    MaterialModule,
     BrowserAnimationsModule,
-    MatProgressBarModule,
-    MatTableModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

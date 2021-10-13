@@ -1,55 +1,61 @@
-CALCULADORA BASICA 2021 <br> 
-{{title}}<br>
-<input type="number"  [(ngModel)]="numero1" /> {{numero1}} <br>
-<input type="number"  [(ngModel)]="numero2"  />{{numero2}<br>
+<div class = "example-container">
+    <mat-toolbar color="primary" class="example-toolbar">
 
-<input type="button" value = "Sumar" (click)="operar('s')"/>
-<input type="button" value = "Restar" (click)="operar('r')"/>
-<input type="button" value = "Multiplicar" (click)="operar('m')"/>
-<input type="button" value = "Dividir" (click)="operar('d')"/><br>
+      <button mat-icon-button (click) ="drawer.toggle()">
+        <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
+        <mat-icon *ngIf="drawer.opened">close</mat-icon>
+      </button>  
+      
+      
+      <h1 class="example-app-name">JULIAPP</h1>
 
-<br>
-<br>
-<br>
+        <span class="example-spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
 
-{{resultado}}
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/perfil">
+            <mat-icon>account_box</mat-icon>
+            <span>Mi perfil</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Cerrar sesion</span>
+          </button>
+        </mat-menu>
+    </mat-toolbar>
+    <mat-progress-bar mode="indeterminate" *ngIf="drawer.opened"></mat-progress-bar>
 
-<input type="text" (keyup)="$event"/><br>
-<br>
-<br>
-<br>
------componente login -------
-<mat-progress-bar mode="buffer"> ...</mat-progress-bar>
-<app-login></app-login>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <mat-drawer-container class="example-sidenav-content" autosize>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+        <img src="assets/udec_escudo.png" width="128" style="margin-left: 20px;">
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" 
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+        <button mat-menu-item style="cursor: pointer" (click) ="drawer.toggle()" routerLink="/buscar">
+          <mat-icon>search</mat-icon>
+          <span>Buscar</span>
+        </button>
+      
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item style="cursor: pointer" (click) ="drawer.toggle()" routerLink="/ingresar">
+          <mat-icon>manage accounts</mat-icon>
+          <span>Ingresar</span>
+        </button>
+      
+        <mat-divider></mat-divider>
+        <button mat-menu-item style="cursor: pointer"  (click) ="drawer.toggle()" routerLink="/editar"> 
+          <mat-icon>edit</mat-icon>
+          <span>Editar</span>
+        </button>
+        <mat-divider></mat-divider>
+
+      </mat-drawer>
+
+        <div class="example-sidenav-content"> 
+          <router-outlet></router-outlet>
+        </div>
+
+    </mat-drawer-container>
+    
+</div>
