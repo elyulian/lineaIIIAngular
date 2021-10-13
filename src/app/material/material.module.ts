@@ -9,6 +9,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 
 
@@ -26,7 +28,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatToolbarModule,
     MatMenuModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatPaginatorModule
 
   ], exports:[
     CommonModule,
@@ -38,7 +41,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatToolbarModule,
     MatMenuModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatPaginatorModule
 
   ]
 })
