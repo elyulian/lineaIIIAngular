@@ -15,6 +15,7 @@ import { IngresarComponent } from './pages/ingresar/ingresar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DepartamentoComponent } from './pages/departamento/departamento.component';
 import { CiudadComponent } from './pages/departamento/ciudad/ciudad.component';
+import { VehiculoComponent } from './pages/vehiculo/vehiculo.component';
 
 
 
@@ -29,7 +30,8 @@ import { CiudadComponent } from './pages/departamento/ciudad/ciudad.component';
     EditarComponent,
     IngresarComponent,
     DepartamentoComponent,
-    CiudadComponent
+    CiudadComponent,
+    VehiculoComponent
   ],
   imports: [
     BrowserModule,

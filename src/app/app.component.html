@@ -31,38 +31,43 @@
       <mat-drawer #drawer class="example-sidenav" mode="side">
         <img src="assets/udec_escudo.png" width="128" style="margin-left: 20px;">
 
-        <button mat-menu-item style="cursor: pointer" (click) ="drawer.toggle()" routerLink="/buscar">
+        <button mat-menu-item style="cursor: pointer" (click) ="drawer.toggle()" [routerLink]="['/buscar']">
           <mat-icon>search</mat-icon>
           <span>Buscar</span>
         </button>
       
         <mat-divider></mat-divider>
 
-        <button mat-menu-item style="cursor: pointer" (click) ="drawer.toggle()" routerLink="/ingresar">
+        <button mat-menu-item style="cursor: pointer" (click) ="drawer.toggle()" [routerLink]="['/ingresar']">
           <mat-icon>manage accounts</mat-icon>
           <span>Ingresar</span>
         </button>
       
         <mat-divider></mat-divider>
 
-        <button mat-menu-item style="cursor: pointer"  (click) ="drawer.toggle()" routerLink="/editar"> 
+        <button mat-menu-item style="cursor: pointer"  (click) ="drawer.toggle()" [routerLink]="['/editar']"> 
           <mat-icon>edit</mat-icon>
           <span>Editar</span>
         </button>
         <mat-divider></mat-divider>
 
-        <button mat-menu-item style="cursor: pointer"  (click) ="drawer.toggle()" routerLink="/departamento"> 
+        <button mat-menu-item style="cursor: pointer"  (click) ="drawer.toggle()" [routerLink]="['/departamento']"> 
           <mat-icon>rowing</mat-icon>
           <span>Departamentos</span>
         </button>
         <mat-divider></mat-divider>
 
+        <button mat-menu-item style="cursor: pointer"  (click) ="drawer.toggle()" [routerLink]="['/vehiculo']"> 
+          <mat-icon>  local_car_wash</mat-icon>
+          <span>Vehiculo</span>
+        </button>
+        <mat-divider></mat-divider>
+  
       </mat-drawer>
-
         <div class="example-sidenav-content"> 
           <router-outlet></router-outlet>
         </div>
 
     </mat-drawer-container>
-    
 </div>
+
