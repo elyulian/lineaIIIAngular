@@ -1,73 +1,74 @@
-<div class = "example-container">
-    <mat-toolbar color="primary" class="example-toolbar">
-
-      <button mat-icon-button (click) ="drawer.toggle()">
-        <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
-        <mat-icon *ngIf="drawer.opened">close</mat-icon>
-      </button>  
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar" > 
       
-      
-      <h1 class="example-app-name">JULIAPP</h1>
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon *ngIf="!drawer.opened">menu</mat-icon>
+      <mat-icon *ngIf="drawer.opened">close</mat-icon>
+    </button>   
+      <h1 class="example-app-name">FastCol</h1>
 
-        <span class="example-spacer"></span>
-        <button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon>more_vert</mat-icon>
+
+      <span class="example-spacer"></span>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
         </button>
 
         <mat-menu #menu="matMenu">
-          <button mat-menu-item routerLink="/perfil">
-            <mat-icon>account_box</mat-icon>
-            <span>Mi perfil</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>exit_to_app</mat-icon>
-            <span>Cerrar sesion</span>
-          </button>
+            <button mat-menu-item [routerLink]="['/perfil']">
+                <mat-icon>account_box</mat-icon>
+                <span>Mi Perfil</span>
+            </button>
+            <button mat-menu-item >
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Cerrar Sesión</span>
+            </button>
         </mat-menu>
-    </mat-toolbar>
-    <mat-progress-bar mode="indeterminate" *ngIf="drawer.opened"></mat-progress-bar>
-
-    <mat-drawer-container class="example-sidenav-content" autosize>
-      <mat-drawer #drawer class="example-sidenav" mode="side">
-        <img src="assets/udec_escudo.png" width="128" style="margin-left: 20px;">
-
-        <button mat-menu-item style="cursor: pointer" (click) ="drawer.toggle()" [routerLink]="['/buscar']">
-          <mat-icon>search</mat-icon>
-          <span>Buscar</span>
-        </button>
+  
       
-        <mat-divider></mat-divider>
+  </mat-toolbar>
+  
+  <mat-drawer-container class="example-sidenav-content" autosize>
+    <mat-drawer #drawer style="width: 200px" mode="side">
 
-        <button mat-menu-item style="cursor: pointer" (click) ="drawer.toggle()" [routerLink]="['/ingresar']">
+        <img src="assets/udec_escudo.png" width="128" style="margin-left: 20px;" />
+  
+        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/buscar']">
+            <mat-icon>search</mat-icon>
+            <span>Buscar</span>
+        </button>
+        <mat-divider></mat-divider>  
+        
+        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/ingresar']">
           <mat-icon>manage accounts</mat-icon>
           <span>Ingresar</span>
         </button>
-      
-        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>  
 
-        <button mat-menu-item style="cursor: pointer"  (click) ="drawer.toggle()" [routerLink]="['/editar']"> 
+        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/editar']">
           <mat-icon>edit</mat-icon>
           <span>Editar</span>
         </button>
-        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>  
 
-        <button mat-menu-item style="cursor: pointer"  (click) ="drawer.toggle()" [routerLink]="['/departamento']"> 
-          <mat-icon>rowing</mat-icon>
-          <span>Departamentos</span>
+        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/departamento']">
+          <mat-icon>room</mat-icon>
+          <span>Departamento</span>
         </button>
-        <mat-divider></mat-divider>
-
-        <button mat-menu-item style="cursor: pointer"  (click) ="drawer.toggle()" [routerLink]="['/vehiculo']"> 
-          <mat-icon>  local_car_wash</mat-icon>
+        <mat-divider></mat-divider>     
+        
+        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/vehiculo']">
+          <mat-icon>commute</mat-icon>
           <span>Vehiculo</span>
         </button>
-        <mat-divider></mat-divider>
-  
-      </mat-drawer>
-        <div class="example-sidenav-content"> 
+        <mat-divider></mat-divider>          
+      
+    </mat-drawer>
+
+      <div class="example-sidenav-content">
           <router-outlet></router-outlet>
-        </div>
+      </div>
 
     </mat-drawer-container>
-</div>
 
+</div>

@@ -1,8 +1,8 @@
 export class Vehiculo{
-    placa!: string;
-    modelo!: string;
-    marca!: string;
-    tipoVehiuclo!: string;
-    capacidad!: string;
-
+    idVehiculo!: number;
+    placa!:      string;
+    modelo!:     string;
+    marca!:     string;
+    tipoVehiuclo!:     string;
+    capacidad!:     string;
 }

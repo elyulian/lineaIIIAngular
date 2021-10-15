@@ -8,6 +8,7 @@ import { DepartamentoService } from 'src/app/_service/departamento.service';
 import {map} from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-departamento',
@@ -24,18 +25,22 @@ export class DepartamentoComponent implements OnInit {
   dataSource = new MatTableDataSource<Departamento>();
 
   @ViewChild("DepartamentoPaginator") paginator!: MatPaginator;
-
+  @ViewChild(MatSort)sort!: MatSort;
 
   constructor(private departamentoService: DepartamentoService,  public route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
     console.log("se ejecuto correctamente");
     this.departamentoService.listar().subscribe(data =>{
     /*console.log(data);
     data.forEach(element => {
       console.log(`Codigo: ${element.idDepartamento} - Nombre ${element.nombre}`);*/
       this.dataSource = new MatTableDataSource(data);
+
       this.dataSource.paginator = this.paginator;
+      this.dataSource.sort =this.sort;
+
     });
     console.log("Despues del servicio");
     
