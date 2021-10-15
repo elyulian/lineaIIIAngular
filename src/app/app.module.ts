@@ -13,6 +13,8 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { IngresarComponent } from './pages/ingresar/ingresar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DepartamentoComponent } from './pages/departamento/departamento.component';
+import { CiudadComponent } from './pages/departamento/ciudad/ciudad.component';
 
 
 
@@ -25,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     RegistroComponent,
     BuscarComponent,
     EditarComponent,
-    IngresarComponent
+    IngresarComponent,
+    DepartamentoComponent,
+    CiudadComponent
   ],
   imports: [
     BrowserModule,
